@@ -2,10 +2,10 @@
 Hello👋 i make API services for mini twitter, in this API you can:
 <br />
 - login register using email <br />
-- make content <br />
-- get content that user make <br />
-- make comment for content <br />
-- show all comment for content <br />
+- tweet <br />
+- like❤️ <br />
+- reply👓 <br />
+- retweet👁 <br />
 <br />
 <br />
 in this API i use: 
