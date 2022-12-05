@@ -1,19 +1,41 @@
-module.exports = (sequelize, Sequelize) => {
+const { DataTypes } = require("sequelize")
+
+module.exports = (sequelize) => {
     const Content = sequelize.define('content', {
         content_id : {
-            type : Sequelize.UUID,
-            defaultValue: Sequelize.UUIDV4,
+            type : DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull : false,
             primaryKey : true
         },
         author : {
-            type : Sequelize.STRING,
+            type : DataTypes.STRING,
             allowNull : false
         },
         content : {
-            type : Sequelize.STRING,
+            type : DataTypes.STRING,
             allowNull : false
-        }
+        },
+        isRetweeting :{
+            type:DataTypes.BOOLEAN,
+            allowNull:false,
+            defaultValue:false
+        },
+        retweetCounted :{
+            type:DataTypes.INTEGER,
+            allowNull :false,
+            defaultValue : 0
+        },
+        likeCounted :{
+            type : DataTypes.INTEGER,
+            allowNull : false,
+            defaultValue : 0
+        },
+        replyCounted :{
+            type:DataTypes.INTEGER,
+            allowNull : false,
+            defaultValue : 0
+        },
     })
 
     return Content

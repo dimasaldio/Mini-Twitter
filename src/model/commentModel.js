@@ -1,21 +1,23 @@
-module.exports = (sequelize, Sequelize)=>{
+const { DataTypes } = require("sequelize")
+
+module.exports = (sequelize)=>{
     const comment = sequelize.define('comment', {
         comment_id : {
-            type: Sequelize.UUID,
-            defaultValue: Sequelize.UUIDV4,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey:true
         },
-        author : {
-            type: Sequelize.STRING,
+        authorComment : {
+            type: DataTypes.STRING,
             allowNull:false
         },
         post : {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull:false
         },
         comment : {
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull:false
         }
     })
